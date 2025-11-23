@@ -4,8 +4,8 @@ const loginForm = document.getElementById("loginForm");
 const signupForm = document.getElementById("signupForm");
 const authMessage = document.getElementById("authMessage");
 
-// Backend API URL
-const API_URL = "http://localhost:5000/api/auth";
+// Backend API URL (Render)
+const API_URL = "https://pandor4x-pandorax-backend.onrender.com";
 
 // ===== LOGIN =====
 loginForm.addEventListener("submit", async function(e) {
@@ -17,7 +17,7 @@ loginForm.addEventListener("submit", async function(e) {
   authMessage.className = "";
 
   try {
-    const res = await fetch(`${API_URL}/login`, {
+    const res = await fetch(`${API_URL}/api/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password })
@@ -53,7 +53,7 @@ signupForm.addEventListener("submit", async function(e) {
   authMessage.className = "";
 
   try {
-    const res = await fetch(`${API_URL}/register`, {
+    const res = await fetch(`${API_URL}/api/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password })

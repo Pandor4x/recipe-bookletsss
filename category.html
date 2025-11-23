@@ -132,7 +132,7 @@ function formatCategoryLabel(raw){ const c = canonicalizeCategory(raw||''); if(!
 
 async function loadRecipes() {
   try {
-    const res = await fetch(`http://localhost:5000/api/recipes?category=${category}`);
+    const res = await fetch(`https://pandor4x-pandorax-backend.onrender.com/api/recipes?category=${category}`);
     const recipes = await res.json();
 
     const list = document.getElementById("categoryRecipeList");
